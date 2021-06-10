@@ -1,0 +1,109 @@
+<html>
+    <head>
+        <script>
+            function VENKYCHINESEREST() {
+                var name = 
+                    document.forms["RegForm"]["name"];
+                var email = 
+                    document.forms["RegForm"]["email"];
+                var phone = 
+                    document.forms["RegForm"]["phone"];
+                var what = 
+                    document.forms["RegForm"]["rating"];
+                var address = 
+                    document.forms["RegForm"]["feedback"];
+  
+                if (name.value == "") {
+                    window.alert("Please enter your name.");
+                    name.focus();
+                    return false;
+                }
+  
+                if (address.value == "") {
+                    window.alert("Please give your feedback");
+                    address.focus();
+                    return false;
+                }
+  
+                if (email.value == "") {
+                    window.alert(
+                      "Please enter a valid e-mail address.");
+                    email.focus();
+                    return false;
+                }
+  
+                if (phone.value == "") {
+                    window.alert(
+                      "Please enter your phone number.");
+                    phone.focus();
+                    return false;
+                }
+  
+  
+                if (what.selectedIndex < 1) {
+                    alert("Please enter your course.");
+                    what.focus();
+                    return false;
+                }
+  
+                return true;
+            }
+        </script>
+  
+        <style>
+            div {
+                height:70px;
+                width: 100%;
+                align-content: center;
+                align-items: center;
+                background-color:red; 
+            }
+  
+            form {
+                margin: 0 auto;
+                width: 600px;
+            }
+            
+        </style>
+    </head>
+  
+    <body style="background-color: #000080;">
+   <div><center><h1 style="text-align: center;color:black;text-transform: uppercase;">Venky's Chinese Kitchen Feedback Form</h1></center></div><br><br>
+        <form name="RegForm" action="submit.php" 
+              onsubmit="return VENKYCHINESEREST()" method="post">
+            <p style="color: white;"><b>NAME:</b><br> <input type="text" 
+                            size="65" name="name" /></p>
+            <br />
+            <p style="color: white;"><b>FEEDBACK:</b><br> <input type="text" 
+                               size="65" name="feedback" />
+          </p>
+            <br />
+            <p style="color: white;"><b>E-MAIL:</b><br> <input type="text" 
+                            size="65" name="email" /></p>
+            <br />
+            
+            <p style="color: white;"><b>PHONE NO:</b><br> <input type="text" 
+                        size="65" name="phone" /></p>
+            <br />
+  
+            <p style="color: white;">
+                <b>RATE YOUR EXPERIENCE:</b>
+                <select type="text"  name="rating">
+                    <option value="poor">Poor</option>
+                    <option value="average">Average</option>
+                    <option value="good" >Good</option>
+                    <option value="verygood">Very Good</option>
+                    <option value="excellent">Excellent</option>
+                </select>
+            </p>
+            <br />
+            <br />
+            <p>
+                <input style="color:red;background-color:black;height:50px;width:100px;margin-left:150px; " type="submit" 
+                       value="submit" name="submit" />&nbsp;&nbsp;&nbsp;&nbsp;
+                <input style="color:red;background-color:black;height:50px;width:100px;" type="reset" 
+                       value="RESET" name="Reset" />
+            </p>
+        </form>
+    </body>
+</html>
