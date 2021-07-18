@@ -3,7 +3,7 @@ $servername="localhost";
 $username="root";
 $password="";
 $dbname="college";
-$conn=new mysqli($servername,$username,$password,$dbname);
+$conn=new mysqli($servername,$username,$password,$dbname); //Memory Creation (defining)
 if(!$conn){
     die("connection failed:".mysql_error());
 }
@@ -15,7 +15,7 @@ if(isset($_POST['submit']))
      $phone=$_POST['phone'];
      $rating = $_POST['rating'];
      
-     $sql = "INSERT INTO register(name,feedback,email,phone,rating)VALUES ('$name','$feedback','$email','$phone','$rating')";
+     $sql = "INSERT INTO register(name,feedback,email,phone,rating)VALUES ('$name','$feedback','$email','$phone','$rating')"; //Inserting the input
      if (mysqli_query($conn, $sql)) {
         echo "New record created successfully !";
      } else {
